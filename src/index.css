@@ -1,0 +1,591 @@
+/* Sadguru Coaching Classes - Main Stylesheet */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap");
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ── Sadguru Brand: Saffron + Indigo ─────────────────── */
+    --background: 45 60% 97%;           /* warm cream-white */
+    --foreground: 255 40% 12%;          /* deep indigo-black text */
+
+    --card: 0 0% 100%;                  /* pure white cards */
+    --card-foreground: 255 40% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 255 40% 12%;
+
+    --primary: 25 95% 53%;              /* 🟠 Saffron #F97316 */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 255 55% 35%;           /* 🟣 Deep Indigo */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 45 25% 92%;                /* warm grey-cream */
+    --muted-foreground: 255 20% 48%;
+
+    --accent: 45 80% 92%;               /* soft golden tint */
+    --accent-foreground: 255 45% 20%;
+
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 85% 97%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --border: 45 28% 87%;               /* warm border */
+    --input: 45 28% 87%;
+    --ring: 25 95% 53%;                 /* saffron ring */
+
+    --radius: 0.75rem;                  /* rounded cards */
+
+    --sidebar-background: 255 60% 16%; /* deep indigo sidebar */
+    --sidebar-foreground: 45 80% 95%;
+    --sidebar-primary: 25 95% 53%;     /* saffron accent */
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 255 50% 26%;
+    --sidebar-accent-foreground: 45 80% 95%;
+    --sidebar-border: 255 40% 24%;
+    --sidebar-ring: 25 95% 53%;
+
+    --chart-1: 25 95% 53%;             /* saffron */
+    --chart-2: 255 55% 50%;            /* indigo */
+    --chart-3: 142 71% 45%;            /* green */
+    --chart-4: 38 95% 55%;             /* amber */
+    --chart-5: 200 80% 50%;            /* teal */
+
+    --shadow-sm: 0 1px 3px 0px hsl(255 40% 12% / 0.08), 0 1px 2px -1px hsl(255 40% 12% / 0.06);
+    --shadow-md: 0 4px 12px -2px hsl(255 40% 12% / 0.1), 0 2px 4px -1px hsl(255 40% 12% / 0.06);
+    --shadow-lg: 0 8px 24px -4px hsl(255 40% 12% / 0.12), 0 4px 8px -2px hsl(255 40% 12% / 0.07);
+    --shadow-xl: 0 16px 40px -6px hsl(255 40% 12% / 0.15), 0 8px 16px -4px hsl(255 40% 12% / 0.08);
+    --sidebar: 0 0% 100%;
+    --font-sans: 'Poppins', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-serif: 'Crimson Pro', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    --shadow-2xs: 0 1px 2px 0px hsl(255 40% 12% / 0.04);
+    --shadow-xs: 0 1px 3px 0px hsl(255 40% 12% / 0.06);
+    --shadow: 0 4px 12px -2px hsl(255 40% 12% / 0.1), 0 2px 4px -1px hsl(255 40% 12% / 0.06);
+    --shadow-2xl: 0 24px 60px -8px hsl(255 40% 12% / 0.2);
+    --tracking-normal: 0em;
+    --spacing: 0.25rem;
+  }
+
+  .dark {
+    /* ── Dark Mode: Deep Indigo Night ────────────────────── */
+    --background: 255 40% 8%;           /* deep purple-black */
+    --foreground: 45 60% 94%;           /* warm cream text */
+
+    --card: 255 35% 13%;                /* dark indigo card */
+    --card-foreground: 45 60% 94%;
+
+    --popover: 255 35% 16%;
+    --popover-foreground: 45 60% 94%;
+
+    --primary: 25 95% 60%;              /* 🟠 brighter saffron on dark */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 255 45% 45%;           /* medium indigo */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 255 30% 20%;               /* dark muted */
+    --muted-foreground: 255 20% 65%;
+
+    --accent: 255 35% 17%;              /* dark indigo accent */
+    --accent-foreground: 45 60% 90%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 85% 97%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --border: 255 30% 22%;              /* subtle indigo border */
+    --input: 255 30% 22%;
+    --ring: 25 95% 60%;                 /* saffron ring */
+
+    --sidebar-background: 255 50% 5%;  /* darkest indigo sidebar */
+    --sidebar-foreground: 45 60% 92%;
+    --sidebar-primary: 25 95% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 255 40% 18%;
+    --sidebar-accent-foreground: 45 60% 92%;
+    --sidebar-border: 255 35% 20%;
+    --sidebar-ring: 25 95% 60%;
+
+    --chart-1: 25 95% 60%;             /* saffron */
+    --chart-2: 255 55% 65%;            /* indigo lighter */
+    --chart-3: 142 71% 55%;            /* green */
+    --chart-4: 38 95% 65%;             /* amber */
+    --chart-5: 200 80% 60%;            /* teal */
+
+    --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.3), 0 1px 2px -1px hsl(0 0% 0% / 0.2);
+    --shadow-md: 0 4px 12px -2px hsl(0 0% 0% / 0.4), 0 2px 4px -1px hsl(0 0% 0% / 0.2);
+    --shadow-lg: 0 8px 24px -4px hsl(0 0% 0% / 0.5), 0 4px 8px -2px hsl(0 0% 0% / 0.3);
+    --shadow-xl: 0 16px 40px -6px hsl(0 0% 0% / 0.6), 0 8px 16px -4px hsl(0 0% 0% / 0.3);
+    --sidebar: 255 35% 13%;
+    --shadow-2xs: 0 1px 2px 0px hsl(0 0% 0% / 0.2);
+    --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
+    --shadow: 0 4px 12px -2px hsl(0 0% 0% / 0.4), 0 2px 4px -1px hsl(0 0% 0% / 0.2);
+    --shadow-2xl: 0 24px 60px -8px hsl(0 0% 0% / 0.6);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Poppins', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    padding-top: max(env(safe-area-inset-top), 0px);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* ========== MAHIMA LOGO LOADER ANIMATION ========== */
+@keyframes mahima-pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+}
+
+@keyframes mahima-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0.6;
+  }
+}
+
+.mahima-loader-logo {
+  animation: mahima-pulse 1.8s ease-in-out infinite;
+}
+
+.mahima-loader-ring {
+  animation: mahima-ring 1.8s ease-in-out infinite;
+}
+
+/* Alias classes for Dashboard.tsx loader animation */
+.sadhguru-loader-logo {
+  animation: mahima-pulse 1.8s ease-in-out infinite;
+}
+.sadhguru-loader-ring {
+  animation: mahima-ring 1.8s ease-in-out infinite;
+}
+
+
+.secure-video-player,
+.student-video-player,
+.mahima-player,
+.white-label-player,
+.mahima-ghost-player {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+/* ========== WHITE LABEL PLAYER ========== */
+.white-label-player {
+  position: relative;
+}
+
+.white-label-player iframe {
+  pointer-events: auto;
+}
+
+/* Hide YouTube UI elements */
+.white-label-player .ytp-chrome-top,
+.white-label-player .ytp-share-button,
+.white-label-player .ytp-watch-later-button,
+.white-label-player .ytp-watermark,
+.white-label-player .ytp-youtube-button,
+.white-label-player .ytp-title,
+.white-label-player .ytp-title-channel,
+.white-label-player .ytp-title-link,
+.white-label-player .ytp-show-cards-title {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* ========== MAHIMA GHOST PLAYER - COMPLETE YOUTUBE BYPASS ========== */
+.mahima-ghost-player {
+  position: relative;
+}
+
+/* iframe receives no pointer events - ghost overlay handles everything */
+.mahima-ghost-player iframe {
+  pointer-events: none !important;
+}
+
+/* Hide ALL YouTube UI elements - COMPREHENSIVE LIST */
+.mahima-ghost-player .ytp-chrome-top,
+.mahima-ghost-player .ytp-chrome-bottom,
+.mahima-ghost-player .ytp-share-button,
+.mahima-ghost-player .ytp-watch-later-button,
+.mahima-ghost-player .ytp-watermark,
+.mahima-ghost-player .ytp-youtube-button,
+.mahima-ghost-player .ytp-title,
+.mahima-ghost-player .ytp-title-channel,
+.mahima-ghost-player .ytp-title-link,
+.mahima-ghost-player .ytp-show-cards-title,
+.mahima-ghost-player .ytp-menuitem[aria-label*="Share"],
+.mahima-ghost-player .ytp-popup,
+.mahima-ghost-player .ytp-contextmenu,
+.mahima-ghost-player .ytp-ce-element,
+.mahima-ghost-player .ytp-endscreen-content,
+.mahima-ghost-player .ytp-pause-overlay,
+.mahima-ghost-player .ytp-gradient-top,
+.mahima-ghost-player .ytp-gradient-bottom,
+.mahima-ghost-player .ytp-spinner,
+.mahima-ghost-player .ytp-large-play-button,
+.mahima-ghost-player .ytp-cued-thumbnail-overlay,
+.mahima-ghost-player .ytp-error,
+.mahima-ghost-player .annotation,
+.mahima-ghost-player .iv-branding,
+.mahima-ghost-player .ytp-impression-link,
+.mahima-ghost-player .ytp-button[aria-label*="YouTube"],
+.mahima-ghost-player .branding-img-container {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* ADDITIONAL YouTube UI blocking - Cover link icon and recommendation thumbnails */
+.mahima-ghost-player .ytp-ce-link-button,
+.mahima-ghost-player .ytp-ce-video-title,
+.mahima-ghost-player .ytp-ce-channel-title,
+.mahima-ghost-player .ytp-ce-video-duration,
+.mahima-ghost-player .ytp-ce-size-640,
+.mahima-ghost-player .ytp-ce-size-1280,
+.mahima-ghost-player [class*="ytp-ce"],
+.mahima-ghost-player [class*="ytp-pause"],
+.mahima-ghost-player .ytp-share-panel,
+.mahima-ghost-player .ytp-sb-subscribe,
+.mahima-ghost-player .ytp-iv-video-content,
+.mahima-ghost-player .ytp-pause-overlay,
+.mahima-ghost-player .ytp-pause-overlay-container,
+.mahima-ghost-player .iv-promo,
+.mahima-ghost-player .iv-promo-contents {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Complete YouTube link/logo blocker */
+.mahima-ghost-player a[href*="youtube"],
+.mahima-ghost-player a[href*="youtu.be"],
+.mahima-ghost-player .ytp-logo,
+.mahima-ghost-player .ytp-button[data-tooltip-target-id*="logo"],
+.mahima-ghost-player img[src*="yt3.ggpht"],
+.mahima-ghost-player img[src*="youtube"] {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Hide YouTube end screen completely */
+.mahima-ghost-player .ytp-endscreen-content,
+.mahima-ghost-player .ytp-endscreen-previous,
+.mahima-ghost-player .ytp-endscreen-next,
+.mahima-ghost-player .ytp-ce-element,
+.mahima-ghost-player .ytp-ce-covering-overlay,
+.mahima-ghost-player .ytp-ce-element-shadow,
+.mahima-ghost-player .ytp-ce-covering-image,
+.mahima-ghost-player .ytp-ce-expanding-image,
+.mahima-ghost-player .ytp-ce-video,
+.mahima-ghost-player .ytp-ce-playlist,
+.mahima-ghost-player .ytp-ce-channel,
+.mahima-ghost-player .ytp-ce-website,
+.mahima-ghost-player .ytp-related-on-screen,
+.mahima-ghost-player .ytp-share-button-visible,
+.mahima-ghost-player .ytp-pause-overlay-container,
+.mahima-ghost-player a[href*="youtube.com"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* ========== FULLSCREEN LAYOUT - NO CROPPING, CONTROLS VISIBLE ========== */
+.mahima-ghost-player:fullscreen,
+.mahima-ghost-player:-webkit-full-screen {
+  width: 100vw !important;
+  height: 100vh !important;
+  max-width: 100vw !important;
+  max-height: 100vh !important;
+  background: #000 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Video container fills available space while maintaining aspect ratio */
+.mahima-ghost-player:fullscreen .mahima-video-container,
+.mahima-ghost-player:-webkit-full-screen .mahima-video-container,
+.mahima-ghost-player:fullscreen .aspect-video,
+.mahima-ghost-player:-webkit-full-screen .aspect-video {
+  flex: 1 !important;
+  width: 100% !important;
+  height: auto !important;
+  max-height: calc(100vh - 70px) !important;
+  min-height: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+}
+
+/* iframe fits container without cropping - proper aspect ratio */
+.mahima-ghost-player:fullscreen iframe,
+.mahima-ghost-player:-webkit-full-screen iframe {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  aspect-ratio: 16/9 !important;
+  object-fit: contain !important;
+}
+
+/* Controls bar fixed at bottom with safe-area support */
+.mahima-ghost-player:fullscreen .mahima-controls-bar,
+.mahima-ghost-player:-webkit-full-screen .mahima-controls-bar {
+  position: fixed !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 2147483646 !important;
+  padding-bottom: max(12px, env(safe-area-inset-bottom)) !important;
+  background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.6), transparent) !important;
+}
+
+/* Watermark position in fullscreen - above controls, extreme bottom-right */
+.mahima-ghost-player:fullscreen .mahima-watermark,
+.mahima-ghost-player:-webkit-full-screen .mahima-watermark {
+  position: fixed !important;
+  bottom: 90px !important;
+  right: 16px !important;
+  z-index: 2147483645 !important;
+  pointer-events: none !important;
+}
+
+/* End screen overlay - HIGHEST z-index to cover everything including YouTube UI */
+.mahima-ghost-player:fullscreen .mahima-end-screen,
+.mahima-ghost-player:-webkit-full-screen .mahima-end-screen {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 2147483647 !important;
+}
+
+/* Ghost overlay z-index in fullscreen */
+.mahima-ghost-player:fullscreen .z-40,
+.mahima-ghost-player:-webkit-full-screen .z-40 {
+  z-index: 2147483644 !important;
+}
+
+/* Pause blocker overlay z-index in fullscreen */
+.mahima-ghost-player:fullscreen .z-\\[39\\],
+.mahima-ghost-player:-webkit-full-screen .z-\\[39\\] {
+  z-index: 2147483643 !important;
+}
+
+/* ========== WHITE LABEL PLAYER FULLSCREEN ========== */
+.white-label-player:fullscreen,
+.white-label-player:-webkit-full-screen {
+  width: 100vw !important;
+  height: 100vh !important;
+  background: #000 !important;
+}
+
+.white-label-player:fullscreen iframe,
+.white-label-player:-webkit-full-screen iframe {
+  transform: none !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+
+/* Blue progress bar for custom controls */
+.mahima-ghost-player .progress-bar {
+  background: #1E90FF;
+}
+
+/* Slider customization for volume */
+.mahima-ghost-player [role="slider"] {
+  --slider-track: rgba(255, 255, 255, 0.3);
+  --slider-range: #1E90FF;
+  --slider-thumb: #1E90FF;
+}
+
+/* Progress bar thumb - prevent repaint flicker */
+.mahima-ghost-player .progress-thumb {
+  will-change: transform;
+}
+
+/* Play button styling */
+.mahima-play-button {
+  background: hsl(var(--primary));
+  transition: transform 0.3s ease;
+}
+
+.mahima-play-button:hover {
+  transform: scale(1.1);
+}
+
+/* Pulsing border animation for last 10 seconds of video */
+@keyframes pulse-border {
+  0%, 100% { box-shadow: 0 0 0 2px hsl(48 96% 53% / 0.6); }
+  50% { box-shadow: 0 0 12px 4px hsl(48 96% 53% / 0.9); }
+}
+
+/* ========== GLOBAL VISUAL POLISH ========== */
+@layer components {
+  /* Card hover lift effect */
+  .card-hover {
+    @apply transition-all duration-200 ease-out;
+  }
+  .card-hover:hover {
+    @apply -translate-y-1 shadow-lg;
+  }
+
+  /* Consistent button primary gradient */
+  .btn-primary-gradient {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    @apply text-primary-foreground font-semibold rounded-xl px-6 py-2.5 transition-all duration-200 hover:opacity-90 hover:shadow-md active:scale-95;
+  }
+
+  /* Form input polish */
+  .input-focus {
+    @apply focus:ring-2 focus:ring-ring focus:ring-offset-1 focus:border-primary transition-all duration-150;
+  }
+
+  /* Progress track improved */
+  .progress-touch {
+    @apply h-1.5 cursor-pointer;
+    min-height: 12px;
+    touch-action: none;
+  }
+
+  /* Consistent card border */
+  .course-card {
+    @apply rounded-2xl border border-border bg-card shadow-sm transition-all duration-200 overflow-hidden;
+  }
+  .course-card:hover {
+    @apply -translate-y-1 shadow-md border-primary/20;
+  }
+
+  /* Nav shadow on scroll */
+  .nav-shadow {
+    box-shadow: 0 4px 20px -4px hsl(var(--foreground) / 0.08);
+  }
+
+  /* Section spacing consistency */
+  .section-padding {
+    @apply py-16 md:py-24 px-4;
+  }
+
+  /* Admin panel card */
+  .admin-card {
+    @apply rounded-xl border border-border bg-card p-5 shadow-sm;
+  }
+
+  /* Badge pill */
+  .badge-pill {
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-medium;
+  }
+}
+
+/* Fake fullscreen for Capacitor Android WebView (document.requestFullscreen is not supported) */
+/* When rotation=0: CSS governs fixed positioning. When rotation=90: inline playerContainerStyle governs it. */
+.mahima-ghost-player.mahima-fake-fullscreen {
+  border-radius: 0 !important;
+  background: #000 !important;
+  overflow: hidden !important;
+}
+
+/* Non-rotated fake fullscreen (rotation=0 but isFakeFullscreen=true) */
+.mahima-ghost-player.mahima-fake-fullscreen:not([style*="rotate"]) {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 9999 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+}
+
+/* Inner video container always fills its parent */
+.mahima-ghost-player.mahima-fake-fullscreen .mahima-video-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* iframe fills the container fully */
+.mahima-ghost-player.mahima-fake-fullscreen .mahima-video-container iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Double-tap ripple for video player */
+@keyframes dt-ripple {
+  0%   { transform: scale(0.3); opacity: 0.7; }
+  60%  { transform: scale(1.6); opacity: 0.25; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+@keyframes dt-label {
+  0%   { opacity: 0; transform: translateY(-40%) scale(0.8); }
+  20%  { opacity: 1; transform: translateY(-50%) scale(1); }
+  70%  { opacity: 1; transform: translateY(-50%) scale(1); }
+  100% { opacity: 0; transform: translateY(-50%) scale(1); }
+}
